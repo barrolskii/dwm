@@ -63,9 +63,8 @@ static const Layout layouts[] = {
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-//static const char *dmenucmd[] = { "dmenu_run", "-c", "-l", lines, "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_purple, "-sf", col_gray4, NULL };
-static const char *dmenucmd[] = { "dmenu_run", "-c", "-l", lines };
-static const char *termcmd[]  = { "alacritty", NULL };
+static const char *dmenucmd[] = { "dmenu_run", "-c", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_purple, "-sf", col_gray4, NULL };
+static const char *termcmd[]  = { "urxvt", NULL };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -102,8 +101,7 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
 
 	/* Personal bindings */
-	//{ MODKEY,           XK_d,      	spawn,          {.v = dmenucmd } },
-	{ MODKEY,           XK_d,      	spawn,          SHCMD("dmenu_run -c -l 20") },
+	{ MODKEY,           XK_d,      	spawn,          {.v = dmenucmd } },
 	{ MODKEY,           XK_Return, 	spawn,          {.v = termcmd } },
 	{ MODKEY, 			XK_b, 		spawn, 			SHCMD("firefox") },
 	{ MODKEY, 			XK_e, 		spawn, 			SHCMD("emacs") },
