@@ -125,7 +125,7 @@ static Key keys[] = {
 	/* Personal bindings */
 	{ MODKEY,           XK_d,      	spawn,          {.v = dmenucmd } },
 	{ MODKEY,           XK_Return, 	spawn,          {.v = termcmd } },
-	{ MODKEY, 			XK_b, 		spawn, 			SHCMD("firefox") },
+	{ MODKEY, 			XK_b, 		spawn, 			SHCMD("brave") },
 	{ MODKEY, 			XK_e, 		spawn, 			SHCMD("emacs") },
 };
 
